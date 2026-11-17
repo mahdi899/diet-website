@@ -13,8 +13,10 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3001,
+    host: '0.0.0.0',
+    port: 3000,
     strictPort: true,
+    allowedHosts: true,
     proxy: {
       '/v1': {
         target: process.env.SABZINE_API_TARGET || 'http://127.0.0.1:8000',
