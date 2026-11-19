@@ -1,0 +1,42 @@
+@import './animations.css';
+@import './legacy/theme.css';
+@import './legacy/intro.css';
+@import './legacy/goals.css';
+@import './legacy/matching.css';
+@import './legacy/verification.css';
+@import './legacy/plans.css';
+@import './legacy/payment-card.css';
+
+.onboarding-shell {
+  background: #f7f8f0;
+  color: #233c2d;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.onboarding-shell .ambient-orb {
+  position: fixed;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatOrb 12s ease-in-out infinite alternate;
+}
+
+.onboarding-shell main {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 640px) {
+  .onboarding-shell #appLogoHomeBtn .diet-brand {
+    --diet-brand-height: 24px;
+  }
+}
+
+@layer base {
+  .onboarding-shell *,
+  .onboarding-shell ::before,
+  .onboarding-shell ::after { border-color: #e5e7eb; }
+}

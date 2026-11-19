@@ -1,0 +1,6 @@
+{
+  "name": "رژیم من",
+  "description": "وب‌سایت عمومی رژیم من به همراه دستیار هوشمند تغذیه و مشاوره برنامه غذایی.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

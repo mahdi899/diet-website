@@ -1,50 +1,125 @@
-@font-face {
-  font-family: Vazirmatn;
-  src: url('../../../assets/fonts/Vazirmatn-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: Vazirmatn;
-  src: url('../../../assets/fonts/Vazirmatn-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: IRANSansX;
-  src: url('../../../assets/fonts/IRANSansX-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: IRANSansX;
-  src: url('../../../assets/fonts/IRANSansX-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-}
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-forest: #143326;
+  --color-forest-deep: #0e241b;
+  --color-green: #1f5e43;
+  --color-green-hover: #174933;
+  --color-mint: #d8e9c9;
+  --color-mint-bright: #c5e4b0;
+  --color-sage: #f3f7f4;
+  --color-pine: #1f5e43;
+  --color-cream: #ffffff;
+  --color-ink: #14261d;
+  --color-muted: #5c6b63;
+  --color-line: #e7ede9;
+  --color-line-strong: #c8d6cd;
+  --color-soft: #f6f8f6;
+  --color-terracotta: #d96b43;
+  --color-terracotta-soft: #fdf5f1;
+  --color-sand: #f8f6f2;
+  --color-danger: #a43b3b;
+  --color-danger-soft: #fff0ef;
+  --color-amber: #c87d32;
+  --color-amber-soft: #fcf6ee;
+  --color-blue: #3b6289;
+  --color-blue-soft: #edf3fa;
+  --font-sans: "Vazirmatn Variable", Tahoma, sans-serif;
+  --radius-mydiet-sm: 10px;
+  --radius-mydiet: 18px;
+  --radius-mydiet-lg: 24px;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    background: #ffffff;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
+
   body {
     margin: 0;
-    background: #f7f8f0;
-    color: #233c2d;
-    font-family: Vazirmatn, IRANSansX, Tahoma, sans-serif;
-    line-height: 1.8;
+    max-width: 100%;
+    overflow-x: clip;
+    background: #ffffff;
+    color: #14261d;
+    font-family: "Vazirmatn Variable", Tahoma, sans-serif;
+    font-feature-settings: "ss01" 1, "cv01" 1;
+    line-height: 1.75;
+    letter-spacing: 0;
   }
+
+  h1, h2, h3, h4, button {
+    font-family: "Vazirmatn Variable", Tahoma, sans-serif;
+    letter-spacing: 0;
+  }
+
+  h1, h2 {
+    text-wrap: balance;
+  }
+
   button,
   input,
   select,
   textarea {
     font-family: inherit;
   }
+
   button {
     cursor: pointer;
+  }
+}
+
+@layer utilities {
+  .contain-layout-paint {
+    contain: layout paint;
+  }
+
+  .contain-content {
+    contain: content;
+  }
+
+  .contain-paint {
+    contain: paint;
+  }
+}
+
+@keyframes orbit-cw {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit-ccw {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes counter-spin-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-spin-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   }
 }
